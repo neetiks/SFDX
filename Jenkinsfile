@@ -22,9 +22,9 @@ node {
     */
     
     def CONNECTED_APP_CONSUMER_KEY="3MVG9YDQS5WtC11qrsc8BmfSrCBc6O3zJ0v8fSaCF7KyXxhkctFGdm0v8V5Exk3aRyzRRgb4xmn8BDG6TGg0R"
-    def HUB_ORG_USER_NAME="neetikhandekar.satarkar@cognizant.com.devhub"
+    def HUB_ORG_USER_NAME="neetikhandekar.satarkar@cognizant.com"
     def SFDC_LOGIN_URL = "https://login.salesforce.com"
-    def JWT_CRED_ID_FOR_PRIVATE_KEY_FILE = "2b48ea37-ba18-48b6-a0e0-c00b9c9da5be"
+    def JWT_CRED_ID_FOR_PRIVATE_KEY_FILE = "ebab1336-b167-4049-aa78-0529f3db39af"
    
 
     stage('checkout source') 
