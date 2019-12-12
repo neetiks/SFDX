@@ -21,8 +21,8 @@ node {
     def CONNECTED_APP_CONSUMER_KEY=env.CONNECTED_APP_CONSUMER_KEY
     */
     
-    def CONNECTED_APP_CONSUMER_KEY="3MVG9YDQS5WtC11qrsc8BmfSrCBc6O3zJ0v8fSaCF7KyXxhkctFGdm0v8V5Exk3aRyzRRgb4xmn8BDG6TGg0R"
-    def HUB_ORG_USER_NAME="neetikhandekar.satarkar@cognizant.com"
+    def CONNECTED_APP_CONSUMER_KEY="3MVG9d8..z.hDcPLICRMy5HexmD8MXtrJ_Y3YpYr872PY8YkHlfUUmQOof6yFB1mLJXybI7Ds42FE.FNuPCw0"
+    def HUB_ORG_USER_NAME="rahul.pathade@cognizant.com"
     def SFDC_LOGIN_URL = "https://login.salesforce.com"
     def JWT_CRED_ID_FOR_PRIVATE_KEY_FILE = "ebab1336-b167-4049-aa78-0529f3db39af"
    
