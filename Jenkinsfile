@@ -38,7 +38,7 @@ node {
         stage('Authorize hub org and set default CI scratch org') 
         {
 			
-			rc = bat returnStatus: true, script: "${toolbelt} sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG_USER_NAME} --jwtkeyfile server.key --setdefaultdevhubusername --instanceurl ${SFDC_LOGIN_URL}"
+		rc = bat returnStatus: true, script: "${toolbelt}\sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG_USER_NAME} --jwtkeyfile server.key --setdefaultdevhubusername --instanceurl ${SFDC_LOGIN_URL}"
            
             if (rc != 0) { error 'hub org authorization failed' }	
             
