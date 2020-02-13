@@ -43,7 +43,7 @@ node {
             if (rc != 0) { error 'hub org authorization failed' }	
             
            // need to pull out assigned username
-		   rmsg = sh returnStdout: true, script: "'${toolbelt}/sfdx' force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
+		   rmsg = sh returnStdout: true, script: "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
 		   
 		   //printf rmsg		   
 		    
@@ -65,7 +65,7 @@ node {
 
         stage('Push To Test Org') 
         {
-            rc = sh returnStatus: true, script: "'${toolbelt}/sfdx' force:source:push --targetusername ${SCRATCH_ORG_USER_NAME}"
+            rc = sh returnStatus: true, script: "sfdx force:source:push --targetusername ${SCRATCH_ORG_USER_NAME}"
             
             if (rc != 0) 
             {
@@ -73,7 +73,7 @@ node {
             }
             
             // assign permission set
-            rc = sh returnStatus: true, script: "'${toolbelt}/sfdx' force:user:permset:assign --targetusername ${SCRATCH_ORG_USER_NAME} --permsetname DreamHouse"
+            rc = sh returnStatus: true, script: "sfdx force:user:permset:assign --targetusername ${SCRATCH_ORG_USER_NAME} --permsetname DreamHouse"
             
             if (rc != 0) 
             {
@@ -86,7 +86,7 @@ node {
             sh "mkdir -p ${RUN_ARTIFACT_DIR}"
             timeout(time: 120, unit: 'SECONDS') 
             {
-                rc = sh returnStatus: true, script: "'${toolbelt}/sfdx' force:apex:test:run --testlevel RunLocalTests --outputdir '${RUN_ARTIFACT_DIR}' --resultformat human --targetusername ${SCRATCH_ORG_USER_NAME}"
+                rc = sh returnStatus: true, script: "sfdx force:apex:test:run --testlevel RunLocalTests --outputdir '${RUN_ARTIFACT_DIR}' --resultformat human --targetusername ${SCRATCH_ORG_USER_NAME}"
                 if (rc != 0) 
                 {
                     error 'apex test run failed'
